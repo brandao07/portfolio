@@ -3,7 +3,7 @@
 #### Skills:  
 - 🖥️ Languages & Frameworks: Go, Java, Python, Node.js, Spring  
 - 🗄️ Databases: PostgreSQL, MySQL, MongoDB, Redis, Firebase  
-- 🛠️ Tools: Docker, Ansible, Google Cloud, Kubernetes, Git, Grafan
+- 🛠️ Tools: Docker, Ansible, Google Cloud, Kubernetes, Git, Grafana
 
 ## About me 🌱  
 - I’m currently finishing my Master’s in Software Engineering and actively looking for backend roles (DevOps is also on the horizon).  
