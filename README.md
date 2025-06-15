@@ -13,7 +13,7 @@
 
 **Backend Developer Intern @ Yari Labs** (_Jun 2025 - Present_)  
 
-**Backend Developer Intern @ eDreamsODIGEO** (_Feb 2023 - Jun 2023_)  
+**Backend Developer Intern @ eDreams ODIGEO** (_Feb 2023 - Jun 2023_)  
 
 ##### **Technologies:** Java (Spring Boot, Spring Security), PostgreSQL, Redis, Docker, JUnit, Swagger, PayPal API  
 
