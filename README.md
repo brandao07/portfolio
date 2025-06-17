@@ -58,7 +58,7 @@
 
 - Research paper - *to be added*.
 
-- Master’s thesis — *to be added*.  
+- Master’s thesis - *to be added*.  
 
 ## Get in Touch ✉️  
 
