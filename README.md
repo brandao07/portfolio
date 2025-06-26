@@ -7,7 +7,7 @@
 
 ## About me 🌱  
 - I’m currently finishing my Master’s in Software Engineering and actively looking for backend roles (DevOps is also on the horizon).  
-- I’m looking to collaborate on projects that enhance my software architecture skills, especially with microservices or distributed systems.  
+- I’m looking to collaborate on projects that enhance my software architecture skills, particularly in microservices or distributed systems.  
 
 ## Work Experience 💼
 
@@ -36,7 +36,10 @@
 - Collaborated remotely in an Agile team using Git and Docker, contributing to sprint planning and containerized backend deployment.  
 
 ## Education 🎓  
-- M.E., Software Engineering - University of Minho (_Present_)  
+- M.E., Software Engineering - University of Minho (_Present_)
+  - Specializations:
+    - Full-Stack Engineering
+    - Software Development (Validation & Maintenance)       
 - B.E., Software Engineering - Polytechnic Institute of Viana do Castelo (_Jul 2023_)  
 
 ## Projects 🚀  
