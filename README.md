@@ -11,7 +11,7 @@
 
 ## Work Experience 💼
 
-**Backend Developer Intern @ Yari Labs** (_Jun 2025 - Jul2025_)
+**Backend Developer Intern @ Yari Labs** (_Jun 2025 - Jul 2025_)
 
 [More info](https://github.com/brandao07/portfolio/blob/main/assets/Internship-Certificate.pdf)
 
