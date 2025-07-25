@@ -13,6 +13,8 @@
 
 **Backend Developer Intern @ Yari Labs** (_Jun 2025 - Jul2025_)
 
+[More info](https://github.com/brandao07/portfolio/blob/main/assets/Internship-Certificate.pdf)
+
 ##### **Technologies:** Go, Docker, PostgreSQL, ClickHouse 
 
 - Developed performant Go microservices for a Shopify analytics platform using PostgreSQL and ClickHouse, implementing data pipelines, event sourcing, and OLAP-optimized models with materialized views and TTL.
