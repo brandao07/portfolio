@@ -11,7 +11,21 @@
 
 ## Work Experience 💼
 
-**Backend Developer Intern @ Yari Labs** (_Jun 2025 - Present_)  
+**Backend Developer Intern @ Yari Labs** (_Jun 2025 - Jul2025_)
+
+##### **Technologies:** Go, Docker, PostgreSQL, ClickHouse 
+
+- Developed performant Go microservices for a Shopify analytics platform using PostgreSQL and ClickHouse, implementing data pipelines, event sourcing, and OLAP-optimized models with materialized views and TTL.
+- Built and maintained a Backend For Frontend (BFF) using Chi, enabling real-time multi-tenant dashboards and seamless API integrations with frontend teams.
+- Developed features end-to-end in an Agile team, including planning, test-driven development, and code reviews, while using Git Flow for version control.
+
+**Site Reliability Engineer @ Cachapuz** (_Sep 2024 - Jan 2025_)  
+
+##### **Technologies:** Prometheus, Grafana, Filebeat, Kibana, Ansible, Azure, Go  
+
+- Implemented monitoring solutions using **Prometheus** for system metrics and configured **Grafana dashboards and alerts** to improve real-time visibility.  
+- Set up **Filebeat** to forward application logs to **Kibana**, enabling centralized log analysis and troubleshooting.  
+- Automated deployment and configuration tasks with **Ansible** to streamline monitoring infrastructure in a simulated/test environment on Azure cloud.  
 
 **Backend Developer Intern @ eDreams ODIGEO** (_Feb 2023 - Jun 2023_)  
 
@@ -41,16 +55,6 @@
     - Full-Stack Engineering
     - Software Development (Validation & Maintenance)       
 - B.E., Software Engineering - Polytechnic Institute of Viana do Castelo (_Jul 2023_)  
-
-## Projects 🚀  
-
-**Site Reliability Engineer (SRE) @ Cachapuz** (_Oct 2024 - Jan 2025_)  
-
-##### **Technologies:** Prometheus, Grafana, Filebeat, Kibana, Ansible, Azure, Go  
-
-- Implemented monitoring solutions using **Prometheus** for system metrics and configured **Grafana dashboards and alerts** to improve real-time visibility.  
-- Set up **Filebeat** to forward application logs to **Kibana**, enabling centralized log analysis and troubleshooting.  
-- Automated deployment and configuration tasks with **Ansible** to streamline monitoring infrastructure in a simulated/test environment on Azure cloud.  
 
 ## Publications 📚  
 <!-----
