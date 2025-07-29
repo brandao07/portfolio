@@ -17,9 +17,9 @@
 
 ##### **Technologies:** Go, Docker, PostgreSQL, ClickHouse 
 
-- Developed **performant Go microservices** for a **Shopify analytics platform** using **PostgreSQL** and **ClickHouse**, implementing **data pipelines**, **event sourcing**, and **OLAP-optimized models** with **materialized views** and **TTL**.  
-- Built and maintained a **Backend For Frontend (BFF)** using **Chi**, enabling **real-time multi-tenant dashboards** and seamless **API integrations** with frontend teams.  
-- Developed features **end-to-end** in an **Agile team**, including **planning**, **test-driven development**, and **code reviews**, while using **Git Flow** for **version control**.
+- Developed performant **Go microservices** for a Shopify analytics platform using **PostgreSQL** and **ClickHouse**, implementing data pipelines, event sourcing, and OLAP-optimized models with materialized views and TTL.
+- Built and maintained a **Backend For Frontend (BFF)** using Chi, enabling real-time multi-tenant dashboards and seamless API integrations with frontend teams.
+- Developed features end-to-end in an Agile team, including planning, **test-driven development**, and code reviews, while using Git Flow for version control.
 
 **Site Reliability Engineer @ Cachapuz** (_Sep 2024 - Jan 2025_)  
 
