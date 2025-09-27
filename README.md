@@ -17,27 +17,15 @@
 
 ##### **Technologies:** Go, Docker, PostgreSQL, ClickHouse 
 
-- Developed performant **Go microservices** for a Shopify analytics platform using **PostgreSQL** and **ClickHouse**, implementing data pipelines, event sourcing, and OLAP-optimized models with materialized views and TTL.
-- Built and maintained a **Backend For Frontend (BFF)** using Chi, enabling real-time multi-tenant dashboards and seamless API integrations with frontend teams.
-- Developed features end-to-end in an Agile team, including planning, **test-driven development**, and code reviews, while using Git Flow for version control.
-
 **Site Reliability Engineer @ Cachapuz** (_Sep 2024 - Jan 2025_)  
 
 ##### **Technologies:** Prometheus, Grafana, Filebeat, Kibana, Ansible, Azure, Go  
-
-- Implemented monitoring solutions using **Prometheus** for system metrics and configured **Grafana dashboards and alerts** to improve real-time visibility.  
-- Set up **Filebeat** to forward application logs to **Kibana**, enabling centralized log analysis and troubleshooting.  
-- Automated deployment and configuration tasks with **Ansible** to streamline monitoring infrastructure in a simulated/test environment on Azure cloud.  
 
 **Backend Developer Intern @ eDreams ODIGEO** (_Feb 2023 - Jun 2023_)  
 
 [More info](https://github.com/brandao07/portfolio/blob/main/assets/dws.pdf)
 
 ##### **Technologies:** Java (Spring Boot, Spring Security), PostgreSQL, Redis, Docker, JUnit, Swagger, PayPal API  
-
-- Designed and developed backend microservices in Java (Spring Boot) for a digital wallet system, including user account and transaction management.  
-- Integrated PayPal’s REST API and webhook handling for secure payment processing and external transaction synchronization.  
-- Implemented authentication and authorization using Spring Security, used PostgreSQL and Redis for persistence and caching, and containerized services with Docker.  
 
 **Backend Developer Intern @ Tlantic** (_Sep 2022 - Feb 2023_)
 
@@ -46,10 +34,6 @@
 [App Showcase](https://www.youtube.com/watch?v=xsCyOhg4SyU)
 
 ##### **Technologies:** Go, Gorilla Mux, PostgreSQL, Docker, JWT  
-
-- Built a RESTful API in Go using Gorilla Mux for a retail POS system, developing over **25 endpoints** for inventory, sales, and user management.  
-- Implemented JWT-based authentication and unit/integration testing; used PostgreSQL for relational data modeling and storage.  
-- Collaborated remotely in an Agile team using Git and Docker, contributing to sprint planning and containerized backend deployment.  
 
 ## Education 🎓  
 - M.E., Software Engineering - University of Minho (_Present_)
