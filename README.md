@@ -11,23 +11,33 @@
 
 ## Work Experience 💼
 
-**Backend Developer Intern @ Yari Labs** (_Jun 2025 - Jul 2025_)
+**Backend Developer Intern @ [Yari Labs](https://www.yarilabs.com/)** (_Oct 2025 - Present_)
+
+---
+
+**Backend Developer Intern @ [Yari Labs](https://www.yarilabs.com/)** (_Jun 2025 - Jul 2025_)
 
 [More info](https://github.com/brandao07/portfolio/blob/main/assets/Internship-Certificate.pdf)
 
-##### **Technologies:** Go, Docker, PostgreSQL, ClickHouse 
+##### **Technologies:** Go, Docker, PostgreSQL, ClickHouse
 
-**Site Reliability Engineer @ Cachapuz** (_Sep 2024 - Jan 2025_)  
+---
 
-##### **Technologies:** Prometheus, Grafana, Filebeat, Kibana, Ansible, Azure, Go  
+**Site Reliability Engineer @ [Cachapuz](https://www.cachapuz.com/)** (_Sep 2024 - Jan 2025_)  
 
-**Backend Developer Intern @ eDreams ODIGEO** (_Feb 2023 - Jun 2023_)  
+##### **Technologies:** Prometheus, Grafana, Filebeat, Kibana, Ansible, Azure, Go
+
+---
+
+**Backend Developer Intern @ [eDreams ODIGEO](https://www.edreamsodigeo.com/)** (_Feb 2023 - Jun 2023_)  
 
 [More info](https://github.com/brandao07/portfolio/blob/main/assets/dws.pdf)
 
-##### **Technologies:** Java (Spring Boot, Spring Security), PostgreSQL, Redis, Docker, JUnit, Swagger, PayPal API  
+##### **Technologies:** Java (Spring Boot, Spring Security), PostgreSQL, Redis, Docker, JUnit, Swagger, PayPal API 
 
-**Backend Developer Intern @ Tlantic** (_Sep 2022 - Feb 2023_)
+---
+
+**Backend Developer Intern @ [Tlantic](https://www.tlantic.com/)** (_Sep 2022 - Feb 2023_)
 
 [More info](https://github.com/brandao07/portfolio/blob/main/assets/pos.pdf)
 
@@ -43,13 +53,6 @@
 - B.E., Software Engineering - Polytechnic Institute of Viana do Castelo (_Jul 2023_)  
 
 ## Publications 📚  
-<!-----
-- **On the Performance of Lua** — Research paper *to be published*.  
-  _Abstract excerpt:_  
-  *Lua is a widely used scripting language in industrial, gaming, and networking applications. Our study analyzes major Lua compilers and benchmarks their performance, showing LuaJIT as the top performer, with energy consumption and execution time close to C.*  
-  ----->
-
-- Research paper - *to be added*.
 
 - Master’s thesis - *to be added*.  
 
