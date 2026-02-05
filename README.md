@@ -2,8 +2,8 @@
 
 #### Skills:  
 - 🖥️ Languages & Frameworks: Go, Java, Python, Node.js, Spring  
-- 🗄️ Databases: PostgreSQL, MySQL, MongoDB, Redis, Firebase
-- 🛠️ Tools: Docker, Ansible, Google Cloud, Kubernetes, Git, Grafana
+- 🗄️ Databases: PostgreSQL, MySQL, MongoDB, Redis, Firebase, Clickhouse
+- 🛠️ Tools: Docker, Ansible, Google Cloud, Kubernetes, Git, Grafana, RabbitMQ
 
 ## About me 🌱  
 - I’m currently finishing my Master’s in Software Engineering and actively looking for backend roles (DevOps is also on the horizon).  
@@ -12,6 +12,8 @@
 ## Work Experience 💼
 
 **Backend Developer Intern @ [Yari Labs](https://www.yarilabs.com/)** (_Oct 2025 - Present_)
+
+##### **Technologies:** Go, Docker, PostgreSQL, ClickHouse, RabbitMQ, Shopify API
 
 ---
 
@@ -43,7 +45,21 @@
 
 [App Showcase](https://www.youtube.com/watch?v=xsCyOhg4SyU)
 
-##### **Technologies:** Go, Gorilla Mux, PostgreSQL, Docker, JWT  
+##### **Technologies:** Go, Gorilla Mux, PostgreSQL, Docker, JWT 
+
+## Publications 📚
+
+- **The Green Side of the Lua**  
+  *André Brandão, Diogo Matos, Miguel Guimarães, Simão Cunha, João Saraiva*  
+  Greenvolve @ SANER 2026, Limassol, Cyprus  
+  DOI: [2601.16670](https://arxiv.org/abs/2601.16670)  
+  GitHub: [lua-versions-paper](https://github.com/simaocunha71/lua-versions-paper)
+
+- **Towards a More Accurate Understanding of Programming Language Energy Efficiency**  
+  *André Brandão*  
+  Master’s thesis, University of Minho  
+  *In progress*  
+  GitHub: [mthesis](https://github.com/brandao07/mthesis)
 
 ## Education 🎓  
 - M.E., Software Engineering - University of Minho (_Present_)
@@ -51,10 +67,6 @@
     - Full-Stack Engineering
     - Software Development (Validation & Maintenance)       
 - B.E., Software Engineering - Polytechnic Institute of Viana do Castelo (_Jul 2023_)  
-
-## Publications 📚  
-
-- Master’s thesis - *to be added*.  
 
 ## Get in Touch ✉️  
 
