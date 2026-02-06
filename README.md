@@ -59,6 +59,8 @@ Curricular internship during my Bachelor’s degree, developing and deploying a 
 [Internship Report](https://github.com/brandao07/portfolio/blob/main/assets/pos.pdf)  
 [App Showcase](https://www.youtube.com/watch?v=xsCyOhg4SyU)
 
+**Technologies:** Go, Gorilla Mux, PostgreSQL, Docker, JWT 
+
 
 ## Publications 📚
 
