@@ -67,6 +67,7 @@ Curricular internship during my Bachelor’s degree, developing and deploying a 
 - **The Green Side of the Lua**  
   *André Brandão, Diogo Matos, Miguel Guimarães, Simão Cunha, João Saraiva*  
   Greenvolve @ SANER 2026, Limassol, Cyprus  
+  [Workshop page](https://conf.researchr.org/details/saner-2026/saner-2026-workshops-tutorials-track/16/The-Green-Side-of-the-Lua)  
   DOI: [2601.16670](https://arxiv.org/abs/2601.16670)  
   GitHub: [lua-versions-paper](https://github.com/simaocunha71/lua-versions-paper)
 
