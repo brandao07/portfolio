@@ -68,8 +68,8 @@ Curricular internship during my Bachelor’s degree, developing and deploying a 
   *André Brandão, Diogo Matos, Miguel Guimarães, Simão Cunha, João Saraiva*  
   Greenvolve @ SANER 2026, Limassol, Cyprus  
   [Workshop page](https://conf.researchr.org/details/saner-2026/saner-2026-workshops-tutorials-track/16/The-Green-Side-of-the-Lua)  
-  DOI: [2601.16670](https://arxiv.org/abs/2601.16670)  
-  GitHub: [lua-versions-paper](https://github.com/simaocunha71/lua-versions-paper)
+  [Paper DOI](https://arxiv.org/abs/2601.16670)    
+  [Replication Package](https://doi.org/10.6084/m9.figshare.29336132)
 
 - **Towards a More Accurate Understanding of Programming Language Energy Efficiency**  
   *André Brandão*  
