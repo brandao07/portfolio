@@ -7,7 +7,22 @@
 
 ## About me 🦇  
 - I’m currently finishing my Master’s in Software Engineering and actively looking for backend roles (DevOps is also on the horizon).  
-- I’m looking to collaborate on projects that enhance my software architecture skills, particularly in microservices or distributed systems.  
+- I’m looking to collaborate on projects that enhance my software architecture skills, particularly in microservices or distributed systems.
+
+## Publications 📚
+
+- **The Green Side of the Lua**  
+  *André Brandão, Diogo Matos, Miguel Guimarães, Simão Cunha, João Saraiva*  
+  Greenvolve @ SANER 2026, Limassol, Cyprus  
+  [Workshop page](https://conf.researchr.org/details/saner-2026/saner-2026-workshops-tutorials-track/16/The-Green-Side-of-the-Lua)  
+  [Paper DOI](https://arxiv.org/abs/2601.16670)    
+  [Replication Package](https://doi.org/10.6084/m9.figshare.29336132)
+
+- **Towards a More Accurate Understanding of Programming Language Energy Efficiency**  
+  *André Brandão*  
+  Master’s thesis, University of Minho  
+  *In progress*  
+  GitHub: [mthesis](https://github.com/brandao07/mthesis)
 
 ## Work Experience 💼
 
@@ -16,7 +31,7 @@
 
 First professional internship, working on backend systems and production services.
 
-**Technologies:** Go, Docker, PostgreSQL, ClickHouse, RabbitMQ, Shopify API
+**Technologies:** Go, Docker, PostgreSQL, ClickHouse, Redis, RabbitMQ, Shopify API, Redpanda
 
 ---
 
@@ -60,22 +75,6 @@ Curricular internship during my Bachelor’s degree, developing and deploying a 
 [App Showcase](https://www.youtube.com/watch?v=xsCyOhg4SyU)
 
 **Technologies:** Go, Gorilla Mux, PostgreSQL, Docker, JWT 
-
-
-## Publications 📚
-
-- **The Green Side of the Lua**  
-  *André Brandão, Diogo Matos, Miguel Guimarães, Simão Cunha, João Saraiva*  
-  Greenvolve @ SANER 2026, Limassol, Cyprus  
-  [Workshop page](https://conf.researchr.org/details/saner-2026/saner-2026-workshops-tutorials-track/16/The-Green-Side-of-the-Lua)  
-  [Paper DOI](https://arxiv.org/abs/2601.16670)    
-  [Replication Package](https://doi.org/10.6084/m9.figshare.29336132)
-
-- **Towards a More Accurate Understanding of Programming Language Energy Efficiency**  
-  *André Brandão*  
-  Master’s thesis, University of Minho  
-  *In progress*  
-  GitHub: [mthesis](https://github.com/brandao07/mthesis)
 
 ## Education 🎓  
 - M.E., Software Engineering - University of Minho (_Present_)
