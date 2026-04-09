@@ -27,7 +27,7 @@
 ## Work Experience 💼
 
 ### Backend Developer Intern · [Yari Labs](https://www.yarilabs.com/)  
-*Oct 2025 – Present*
+*Oct 2025 – Apr 2026*
 
 First professional internship, working on backend systems and production services.
 
