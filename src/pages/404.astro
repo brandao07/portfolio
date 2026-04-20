@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 | André Brandão" description="Page not found.">
+  <div class="not-found-wrap">
+    <section class="not-found-card motion-rise">
+      <p class="section-kicker">Not found</p>
+      <p class="not-found-code">404</p>
+      <h1 class="section-title">This page does not exist.</h1>
+      <p class="section-intro">
+        The link may be outdated, or the page might have moved while the portfolio was being rebuilt.
+      </p>
+      <div class="cta-row" style="justify-content: center;">
+        <a class="button button-primary" href={`${import.meta.env.BASE_URL}`}>Return home</a>
+        <a class="button button-secondary" href={`${import.meta.env.BASE_URL}blog/`}>Browse writing</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+

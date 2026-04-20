@@ -1,0 +1,54 @@
+---
+import type { ProjectEntry } from '../data/site';
+
+interface Props {
+  items: ProjectEntry[];
+}
+
+const { items } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const resolveHref = (href: string) => (href.startsWith('/') ? `${base}${href.slice(1)}` : href);
+---
+
+<div class="project-grid">
+  {items.map((item) => (
+    <article class="project-card">
+      <header>
+        <h3 class="card-title">{item.title}</h3>
+        <div class="metric-card" aria-label={item.metricLabel}>
+          <span class="metric-value">{item.metric}</span>
+          <span class="metric-label">{item.metricLabel}</span>
+        </div>
+        <p class="case-study-context">{item.context}</p>
+      </header>
+      <div class="case-study-grid">
+        <article class="case-study-block">
+          <h4 class="case-study-label">Problem</h4>
+          <p>{item.problem}</p>
+        </article>
+        <article class="case-study-block">
+          <h4 class="case-study-label">Work</h4>
+          <p>{item.work}</p>
+        </article>
+        <article class="case-study-block">
+          <h4 class="case-study-label">Result</h4>
+          <p>{item.result}</p>
+        </article>
+      </div>
+      <div class="tag-list" aria-label={`${item.title} tags`}>
+        {item.tags.map((tag) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+      {item.links && item.links.length > 0 && (
+        <div class="inline-links">
+          {item.links.map((link) => (
+            <a class="inline-link" href={resolveHref(link.href)} target="_blank" rel="noreferrer">
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </article>
+  ))}
+</div>

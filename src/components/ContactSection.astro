@@ -1,0 +1,21 @@
+---
+import { siteMeta, socialLinks } from '../data/site';
+---
+
+<section id="contact" class="contact-card motion-rise">
+  <h2>Hiring for backend work that needs ownership?</h2>
+  <p>
+    Based in Portugal and open to remote roles or relocation for teams building serious backend systems, APIs, and
+    data platforms.
+  </p>
+  <div class="cta-row">
+    <a class="button button-primary" href={`mailto:${siteMeta.email}`}>Email me</a>
+    {socialLinks
+      .filter((item) => !item.accent)
+      .map((item) => (
+        <a class="button button-secondary" href={item.href} target="_blank" rel="noreferrer">
+          {item.label}
+        </a>
+      ))}
+  </div>
+</section>
