@@ -52,6 +52,7 @@ export type ProjectEntry = {
 export type EducationEntry = {
   degree: string;
   institution: string;
+  institutionHref?: string;
   period: string;
   details?: string[];
 };
@@ -92,7 +93,7 @@ export const focusAreas = [
 export const skillGroups: SkillGroup[] = [
   {
     title: 'Programming languages',
-    items: ['Go', 'Java', 'Python'],
+    items: ['Go', 'Java', 'Python', 'Bash'],
   },
   {
     title: 'Backend and data',
@@ -100,7 +101,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: 'Testing and delivery',
-    items: ['Unit testing', 'Integration testing', 'E2E testing', 'Testcontainers', 'GitHub Actions'],
+    items: ['Unit testing', 'Integration testing', 'E2E testing', 'Testcontainers', 'Git', 'GitHub Actions'],
   },
   {
     title: 'Observability and infrastructure',
@@ -108,7 +109,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: 'Academic exposure',
-    items: ['Kubernetes', 'Google Cloud Platform'],
+    items: ['Kubernetes', 'Google Cloud Platform', 'C#', 'JavaScript', 'TypeScript'],
   },
 ];
 
@@ -234,6 +235,7 @@ export const education: EducationEntry[] = [
   {
     degree: 'M.E., Software Engineering',
     institution: 'University of Minho',
+    institutionHref: 'https://www.uminho.pt/EN',
     period: 'Sep 2023 – Oct 2026',
     details: [
       "Expected graduation: Oct 2026. Master's thesis in progress; available to start full-time while completing the degree.",
@@ -243,6 +245,7 @@ export const education: EducationEntry[] = [
   {
     degree: 'B.E., Software Engineering',
     institution: 'Polytechnic Institute of Viana do Castelo',
+    institutionHref: 'https://www.ipvc.pt/en/',
     period: 'Oct 2020 – Jul 2023',
     details: ['GPA: 15.2 / 20.'],
   },

@@ -471,7 +471,9 @@ a {
 }
 
 .entry-title a,
-.card-title a {
+.card-title a,
+.education-card strong a,
+.footer a {
   text-decoration: none;
 }
 
@@ -479,8 +481,12 @@ a {
 .entry-title a:focus-visible,
 .card-title a:hover,
 .card-title a:focus-visible,
+.education-card strong a:hover,
+.education-card strong a:focus-visible,
 .inline-link:hover,
 .inline-link:focus-visible,
+.footer a:hover,
+.footer a:focus-visible,
 .brand:hover,
 .brand:focus-visible {
   color: var(--accent);
