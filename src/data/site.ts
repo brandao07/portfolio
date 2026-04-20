@@ -7,6 +7,7 @@ export type SocialLink = {
 export type HeroStat = {
   value: string;
   label: string;
+  targetId: string;
 };
 
 export type SkillGroup = {
@@ -17,6 +18,11 @@ export type SkillGroup = {
 export type ArtifactLink = {
   label: string;
   href: string;
+};
+
+export type CaseStudyMetric = {
+  value: string;
+  label: string;
 };
 
 export type ExperienceEntry = {
@@ -38,6 +44,7 @@ export type PublicationEntry = {
 };
 
 export type ProjectEntry = {
+  id: string;
   title: string;
   context: string;
   problem: string;
@@ -45,6 +52,7 @@ export type ProjectEntry = {
   result: string;
   metric: string;
   metricLabel: string;
+  metrics?: CaseStudyMetric[];
   tags: string[];
   links?: ArtifactLink[];
 };
@@ -78,9 +86,9 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const heroStats: HeroStat[] = [
-  { value: '60s -> 30ms', label: 'worst-case dashboard query' },
-  { value: '10k records/s', label: 'validated ingestion burst' },
-  { value: '15+ endpoints', label: 'wallet backend delivery' },
+  { value: '60s -> 30ms', label: 'worst-case dashboard query', targetId: 'case-study-analytics' },
+  { value: '10k records/s', label: 'validated ingestion burst', targetId: 'case-study-analytics' },
+  { value: '15+ endpoints', label: 'wallet backend delivery', targetId: 'case-study-wallet' },
 ];
 
 export const focusAreas = [
@@ -89,6 +97,21 @@ export const focusAreas = [
   'Event-driven systems',
   'Analytical data platforms',
 ];
+
+export const currentStack = ['Go', 'PostgreSQL', 'ClickHouse', 'RabbitMQ'];
+
+export const currentStackNote = 'Mostly around production APIs, analytical storage, and event-driven flows.';
+
+export const heroAvailabilityMeta = [
+  { label: 'Start', value: 'ASAP' },
+  { label: 'Timezone', value: 'Portugal' },
+  { label: 'Open to', value: 'Remote or relocation' },
+];
+
+export const expandingInto = ['Kubernetes', 'Helm', 'Google Cloud Platform'];
+
+export const expandingIntoNote =
+  'Building more depth in infrastructure, deployment, and operability to grow from backend delivery into stronger platform-aware engineering.';
 
 export const skillGroups: SkillGroup[] = [
   {
@@ -160,6 +183,7 @@ export const experiences: ExperienceEntry[] = [
 
 export const featuredWork: ProjectEntry[] = [
   {
+    id: 'case-study-analytics',
     title: 'Analytics Platform and ClickHouse Optimization',
     context:
       'Yari Labs case study spanning Go services, webhook ingestion, analytical storage, and real-time dashboard delivery.',
@@ -171,9 +195,14 @@ export const featuredWork: ProjectEntry[] = [
       'Turned a worst-case dashboard query into production-ready latency while validating ingestion bursts for live analytics workloads.',
     metric: '60s -> 30ms',
     metricLabel: 'worst-case query latency',
+    metrics: [
+      { value: '60s -> 30ms', label: 'worst-case query latency' },
+      { value: '10k records/s', label: 'validated ingestion burst' },
+    ],
     tags: ['Go', 'ClickHouse', 'RabbitMQ'],
   },
   {
+    id: 'case-study-wallet',
     title: 'Digital Wallet Backend',
     context:
       'eDreams ODIGEO case study covering Java microservices for accounts, transactions, payments, and exchange-rate flows.',
@@ -189,6 +218,7 @@ export const featuredWork: ProjectEntry[] = [
     links: [{ label: 'Internship report', href: '/assets/dws.pdf' }],
   },
   {
+    id: 'case-study-retail-pos',
     title: 'Retail POS API',
     context:
       'Tlantic case study focused on Go API delivery for a retail POS product used around inventory, sales, and user management.',

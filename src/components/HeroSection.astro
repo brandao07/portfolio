@@ -1,5 +1,14 @@
 ---
-import { focusAreas, heroStats, siteMeta, socialLinks } from '../data/site';
+import {
+  currentStack,
+  currentStackNote,
+  expandingInto,
+  expandingIntoNote,
+  focusAreas,
+  heroAvailabilityMeta,
+  heroStats,
+  siteMeta,
+} from '../data/site';
 
 const base = import.meta.env.BASE_URL;
 ---
@@ -19,15 +28,15 @@ const base = import.meta.env.BASE_URL;
         ))}
       </div>
       <div class="cta-row">
-        <a class="button button-primary" href={`mailto:${siteMeta.email}`}>Start a conversation</a>
+        <a class="button button-primary" href={`${base}#contact`}>Start a conversation</a>
         <a class="button button-secondary" href={`${base}#projects`}>View featured work</a>
       </div>
       <div class="hero-stats">
         {heroStats.map((item) => (
-          <div class="stat-card">
+          <a class="stat-card stat-link" href={`${base}#${item.targetId}`} data-case-study-link>
             <span class="stat-value">{item.value}</span>
             <span class="stat-label">{item.label}</span>
-          </div>
+          </a>
         ))}
       </div>
     </div>
@@ -39,16 +48,32 @@ const base = import.meta.env.BASE_URL;
     <div class="aside-card">
       <h2>Now</h2>
       <p>{siteMeta.availability}</p>
+      <dl class="aside-meta-list">
+        {heroAvailabilityMeta.map((item) => (
+          <div>
+            <dt>{item.label}</dt>
+            <dd>{item.value}</dd>
+          </div>
+        ))}
+      </dl>
     </div>
     <div class="aside-card">
-      <h2>Links</h2>
-      <div class="link-row">
-        {socialLinks.map((item) => (
-          <a class="pill-link" href={item.href} target="_blank" rel="noreferrer">
-            {item.label}
-          </a>
+      <h2>Currently working with</h2>
+      <div class="aside-chip-list" aria-label="Current stack">
+        {currentStack.map((item) => (
+          <span class="chip">{item}</span>
         ))}
       </div>
+      <p class="aside-note">{currentStackNote}</p>
+    </div>
+    <div class="aside-card">
+      <h2>Expanding into</h2>
+      <div class="aside-chip-list" aria-label="Expanding into">
+        {expandingInto.map((item) => (
+          <span class="chip">{item}</span>
+        ))}
+      </div>
+      <p class="aside-note">{expandingIntoNote}</p>
     </div>
   </aside>
 </section>

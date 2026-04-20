@@ -12,15 +12,25 @@ const resolveHref = (href: string) => (href.startsWith('/') ? `${base}${href.sli
 
 <div class="project-grid">
   {items.map((item) => (
-    <article class="project-card">
+    <article class="project-card" id={item.id}>
+      {(() => {
+        const metrics = item.metrics?.length ? item.metrics : [{ value: item.metric, label: item.metricLabel }];
+
+        return (
       <header>
         <h3 class="card-title">{item.title}</h3>
-        <div class="metric-card" aria-label={item.metricLabel}>
-          <span class="metric-value">{item.metric}</span>
-          <span class="metric-label">{item.metricLabel}</span>
+        <div class="metric-row" aria-label={`${item.title} key metrics`}>
+          {metrics.map((metric) => (
+            <div class="metric-card" aria-label={metric.label}>
+              <span class="metric-value">{metric.value}</span>
+              <span class="metric-label">{metric.label}</span>
+            </div>
+          ))}
         </div>
         <p class="case-study-context">{item.context}</p>
       </header>
+        );
+      })()}
       <div class="case-study-grid">
         <article class="case-study-block">
           <h4 class="case-study-label">Problem</h4>
@@ -52,3 +62,67 @@ const resolveHref = (href: string) => (href.startsWith('/') ? `${base}${href.sli
     </article>
   ))}
 </div>
+
+<script>
+  const highlightDurationMs = 1500;
+  let activeCard;
+  let activeTimeoutId;
+
+  const clearHighlight = () => {
+    if (!(activeCard instanceof HTMLElement)) return;
+    activeCard.classList.remove('is-highlighted');
+    activeCard = undefined;
+  };
+
+  const highlightCard = (card) => {
+    if (!(card instanceof HTMLElement)) return;
+
+    window.clearTimeout(activeTimeoutId);
+    clearHighlight();
+
+    activeCard = card;
+    card.classList.remove('is-highlighted');
+    void card.offsetWidth;
+    card.classList.add('is-highlighted');
+
+    activeTimeoutId = window.setTimeout(() => {
+      if (activeCard === card) {
+        card.classList.remove('is-highlighted');
+        activeCard = undefined;
+      }
+    }, highlightDurationMs);
+  };
+
+  const scrollToCaseStudy = (id, smooth = true) => {
+    if (!id) return;
+
+    const card = document.getElementById(id);
+    if (!(card instanceof HTMLElement)) return;
+
+    card.scrollIntoView({
+      behavior: smooth ? 'smooth' : 'auto',
+      block: 'start',
+    });
+    highlightCard(card);
+  };
+
+  document.querySelectorAll('[data-case-study-link]').forEach((link) => {
+    if (!(link instanceof HTMLAnchorElement)) return;
+
+    link.addEventListener('click', (event) => {
+      const targetId = new URL(link.href).hash.replace('#', '');
+      if (!targetId) return;
+
+      event.preventDefault();
+      scrollToCaseStudy(targetId, true);
+    });
+  });
+
+  if (window.location.hash.startsWith('#case-study-')) {
+    const initialId = window.location.hash.slice(1);
+    window.requestAnimationFrame(() => {
+      scrollToCaseStudy(initialId, false);
+      window.history.replaceState({}, '', `${window.location.pathname}${window.location.search}`);
+    });
+  }
+</script>
