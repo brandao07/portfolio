@@ -39,9 +39,13 @@ export type PublicationEntry = {
 
 export type ProjectEntry = {
   title: string;
-  description: string;
+  context: string;
+  problem: string;
+  work: string;
+  result: string;
+  metric: string;
+  metricLabel: string;
   tags: string[];
-  highlights?: string[];
   links?: ArtifactLink[];
 };
 
@@ -58,7 +62,7 @@ export const siteMeta = {
   role: 'Backend Developer',
   title: '"I like designing backend systems as much as building them."',
   summary:
-    'Backend developer with hands-on experience building Go microservices, APIs, and data-heavy backend systems. Comfortable with ownership across delivery, testing, observability, and technical collaboration.',
+    'Backend developer focused on APIs, Go services, and backend systems that need to hold up in production. I enjoy turning architecture and system design into reliable delivery, testing, and observability work.',
   availability:
     'Based in Portugal, available to start ASAP, and open to remote roles and relocation for strong backend opportunities.',
   email: 'brandao.business@hotmail.com',
@@ -156,37 +160,46 @@ export const experiences: ExperienceEntry[] = [
 export const featuredWork: ProjectEntry[] = [
   {
     title: 'Analytics Platform and ClickHouse Optimization',
-    description:
-      'Case study from Yari Labs spanning Go microservices, a layered API, Shopify webhook processing, and ClickHouse-backed analytics for real-time dashboards.',
+    context:
+      'Yari Labs case study spanning Go services, webhook ingestion, analytical storage, and real-time dashboard delivery.',
+    problem:
+      'The analytics MVP needed ingestion and query paths fast enough for real dashboard usage, not exploratory latency.',
+    work:
+      'Built and refactored Go services and a layered API, added webhook-driven flows, and worked on Redpanda Connect plus ClickHouse query paths.',
+    result:
+      'Turned a worst-case dashboard query into production-ready latency while validating ingestion bursts for live analytics workloads.',
+    metric: '60s -> 30ms',
+    metricLabel: 'worst-case query latency',
     tags: ['Go', 'ClickHouse', 'RabbitMQ'],
-    highlights: [
-      'Cut a worst-case dashboard query from <strong>over 60 seconds</strong> to <strong>under 30 milliseconds</strong>.',
-      'Validated Redpanda Connect ingestion bursts around <strong>10k records per second</strong>.',
-      'Built backend flows and analytics queries that powered real-time dashboard widgets.',
-    ],
   },
   {
     title: 'Digital Wallet Backend',
-    description:
-      'Backend implementation for a digital wallet system at eDreams ODIGEO, covering APIs, business logic, integrations, caching, testing, and delivery documentation.',
+    context:
+      'eDreams ODIGEO case study covering Java microservices for accounts, transactions, payments, and exchange-rate flows.',
+    problem:
+      'The wallet backend needed clear service boundaries and production-ready APIs across payment and transaction workflows.',
+    work:
+      'Implemented two Spring Boot microservices, designed 15+ REST endpoints, and handled caching, testing, security, and delivery documentation.',
+    result:
+      'Delivered the backend foundation for account, transaction, PayPal, and exchange-rate operations with end-to-end ownership.',
+    metric: '15+',
+    metricLabel: 'REST endpoints shipped',
     tags: ['Java', 'Spring Boot', 'Payments'],
-    highlights: [
-      'Delivered <strong>15+ REST endpoints</strong> across <strong>two Spring Boot microservices</strong>.',
-      'Owned accounts, transactions, PayPal, and exchange-rate workflows end to end.',
-      'Used Redis caching, PostgreSQL, Docker, JUnit, Swagger, and Spring Security.',
-    ],
     links: [{ label: 'Internship report', href: '/assets/dws.pdf' }],
   },
   {
     title: 'Retail POS API',
-    description:
-      'Go API work for a retail POS system at Tlantic, focused on inventory, sales, user management, authentication, and steady delivery coordination.',
+    context:
+      'Tlantic case study focused on Go API delivery for a retail POS product used around inventory, sales, and user management.',
+    problem:
+      'The platform needed practical backend coverage for core retail workflows without losing delivery rhythm or coordination.',
+    work:
+      'Built the REST API with PostgreSQL, Docker, and JWT while working closely with product managers and a senior engineer on scope and delivery.',
+    result:
+      'Shipped a production-oriented backend surface for core POS operations while keeping the work tightly aligned with product needs.',
+    metric: '25+',
+    metricLabel: 'endpoints delivered',
     tags: ['Go', 'PostgreSQL', 'JWT'],
-    highlights: [
-      'Built <strong>25+ endpoints</strong> for inventory, sales, and user management.',
-      'Worked with PostgreSQL, Docker, and JWT in a production-oriented backend setting.',
-      'Coordinated weekly with product managers and a senior engineer on scope and delivery.',
-    ],
     links: [
       { label: 'Internship report', href: '/assets/pos.pdf' },
       { label: 'App showcase', href: 'https://www.youtube.com/watch?v=xsCyOhg4SyU' },

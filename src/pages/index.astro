@@ -3,10 +3,11 @@ import ContactSection from '../components/ContactSection.astro';
 import ExperienceTimeline from '../components/ExperienceTimeline.astro';
 import HeroSection from '../components/HeroSection.astro';
 import ProjectGrid from '../components/ProjectGrid.astro';
-import PublicationList from '../components/PublicationList.astro';
 import SectionBlock from '../components/SectionBlock.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { education, experiences, featuredWork, publications, siteMeta, skillGroups } from '../data/site';
+import { education, experiences, featuredWork, siteMeta, skillGroups } from '../data/site';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="André Brandão | Backend Developer" description={siteMeta.summary}>
@@ -16,7 +17,7 @@ import { education, experiences, featuredWork, publications, siteMeta, skillGrou
     id="experience"
     kicker="Experience"
     title="Building backend systems across APIs, data pipelines, observability, and production-oriented internships."
-    intro="The common thread is ownership: services, messaging, analytical storage, reliability tooling, and backend work that has to support real usage."
+    intro="APIs, messaging, analytical storage, and reliability work with real delivery constraints."
   >
     <ExperienceTimeline items={experiences} />
   </SectionBlock>
@@ -25,7 +26,7 @@ import { education, experiences, featuredWork, publications, siteMeta, skillGrou
     id="projects"
     kicker="Featured work"
     title="Selected engineering case studies from backend delivery and performance work."
-    intro="These cards focus on production-oriented systems work rather than research, with a few concrete metrics where they materially show impact."
+    intro="Three compact case studies from backend delivery, performance, and product-facing systems work."
   >
     <ProjectGrid items={featuredWork} />
   </SectionBlock>
@@ -34,7 +35,7 @@ import { education, experiences, featuredWork, publications, siteMeta, skillGrou
     id="skills"
     kicker="Skills"
     title="A backend-focused toolkit shaped by services, data systems, testing, and observability."
-    intro="The emphasis is on tools and concepts that repeatedly appeared across delivery work, not a broad list of everything I have touched."
+    intro="Tools and concepts that keep showing up in backend delivery."
   >
     <div class="project-grid">
       {skillGroups.map((group) => (
@@ -56,7 +57,7 @@ import { education, experiences, featuredWork, publications, siteMeta, skillGrou
     id="education"
     kicker="Education"
     title="Formal training that supports practical software engineering work."
-    intro="The academic side stays visible, but the portfolio is intentionally grounded in backend delivery rather than research-first positioning."
+    intro="Academic grounding that supports production-focused engineering work."
   >
     <div class="education-grid">
       {education.map((item) => (
@@ -79,12 +80,14 @@ import { education, experiences, featuredWork, publications, siteMeta, skillGrou
   </SectionBlock>
 
   <SectionBlock
-    id="publications"
+    id="research"
     kicker="Research"
-    title="Publications and academic work."
-    intro="Research stays secondary here, but it reflects how I approach measurement, rigor, and long-form technical thinking."
+    title="Research stays visible, but secondary."
+    intro="I keep academic work separate from the main hiring narrative, but it still reflects how I approach rigor, measurement, and technical depth."
   >
-    <PublicationList items={publications} />
+    <article class="research-teaser">
+      <a class="button button-secondary" href={`${base}research/`}>See research and publications</a>
+    </article>
   </SectionBlock>
 
   <ContactSection />

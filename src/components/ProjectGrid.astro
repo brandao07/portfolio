@@ -15,15 +15,26 @@ const resolveHref = (href: string) => (href.startsWith('/') ? `${base}${href.sli
     <article class="project-card">
       <header>
         <h3 class="card-title">{item.title}</h3>
+        <div class="metric-card" aria-label={item.metricLabel}>
+          <span class="metric-value">{item.metric}</span>
+          <span class="metric-label">{item.metricLabel}</span>
+        </div>
+        <p class="case-study-context">{item.context}</p>
       </header>
-      <p>{item.description}</p>
-      {item.highlights && item.highlights.length > 0 && (
-        <ul class="project-highlights">
-          {item.highlights.map((highlight) => (
-            <li set:html={highlight}></li>
-          ))}
-        </ul>
-      )}
+      <div class="case-study-grid">
+        <article class="case-study-block">
+          <h4 class="case-study-label">Problem</h4>
+          <p>{item.problem}</p>
+        </article>
+        <article class="case-study-block">
+          <h4 class="case-study-label">Work</h4>
+          <p>{item.work}</p>
+        </article>
+        <article class="case-study-block">
+          <h4 class="case-study-label">Result</h4>
+          <p>{item.result}</p>
+        </article>
+      </div>
       <div class="tag-list" aria-label={`${item.title} tags`}>
         {item.tags.map((tag) => (
           <span class="tag">{tag}</span>
