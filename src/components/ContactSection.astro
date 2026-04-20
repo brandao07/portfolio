@@ -1,0 +1,22 @@
+---
+import { siteMeta, socialLinks } from '../data/site';
+---
+
+<section id="contact" class="contact-card motion-rise">
+  <h2>Build something that needs strong backend fundamentals.</h2>
+  <p>
+    I'm open to backend engineering roles and technical conversations around Go services, data systems,
+    observability, and production reliability.
+  </p>
+  <div class="cta-row">
+    <a class="button button-primary" href={`mailto:${siteMeta.email}`}>Email me</a>
+    {socialLinks
+      .filter((item) => !item.accent)
+      .map((item) => (
+        <a class="button button-secondary" href={item.href} target="_blank" rel="noreferrer">
+          {item.label}
+        </a>
+      ))}
+  </div>
+</section>
+

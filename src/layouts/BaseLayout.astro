@@ -1,0 +1,70 @@
+---
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const base = import.meta.env.BASE_URL;
+const defaultImage = `${base}assets/avatar.png`;
+const {
+  title = 'André Brandão | Backend Engineer',
+  description = 'Backend engineer portfolio and writing archive.',
+  image = defaultImage,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const imageUrl = new URL(image, Astro.site).href;
+const navItems = [
+  { label: 'Work', href: `${base}#experience` },
+  { label: 'Projects', href: `${base}#projects` },
+  { label: 'Writing', href: `${base}blog/` },
+  { label: 'Contact', href: `${base}#contact` },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#f5efe6" />
+    <link rel="canonical" href={canonical.href} />
+    <link rel="icon" href={defaultImage} />
+    <link rel="alternate" type="application/rss+xml" title="Andre Brandao RSS Feed" href={`${base}rss.xml`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+    <meta property="og:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href={base}>André Brandão</a>
+        <nav class="nav-links" aria-label="Primary">
+          {navItems.map((item) => (
+            <a href={item.href}>{item.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+    <main id="content" class="page">
+      <div class="site-shell">
+        <slot />
+        <Footer />
+      </div>
+    </main>
+  </body>
+</html>

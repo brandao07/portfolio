@@ -1,0 +1,43 @@
+---
+import type { ExperienceEntry } from '../data/site';
+
+interface Props {
+  items: ExperienceEntry[];
+}
+
+const { items } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const resolveHref = (href: string) => (href.startsWith('/') ? `${base}${href.slice(1)}` : href);
+---
+
+<div class="timeline">
+  {items.map((item) => (
+    <article class="timeline-item">
+      <header>
+        <div class="title-row">
+          <h3 class="entry-title">
+            <a href={item.href} target="_blank" rel="noreferrer">
+              {item.role} · {item.company}
+            </a>
+          </h3>
+          <span class="entry-period">{item.period}</span>
+        </div>
+      </header>
+      <p>{item.summary}</p>
+      <div class="chip-list" aria-label={`${item.company} technologies`}>
+        {item.technologies.map((tech) => (
+          <span class="chip">{tech}</span>
+        ))}
+      </div>
+      {item.artifacts && (
+        <div class="inline-links">
+          {item.artifacts.map((artifact) => (
+            <a class="inline-link" href={resolveHref(artifact.href)} target="_blank" rel="noreferrer">
+              {artifact.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </article>
+  ))}
+</div>

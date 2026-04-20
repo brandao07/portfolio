@@ -1,0 +1,32 @@
+---
+import type { PublicationEntry } from '../data/site';
+
+interface Props {
+  items: PublicationEntry[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="publication-list">
+  {items.map((item) => (
+    <article class="publication-card">
+      <header>
+        <div class="title-row">
+          <h3 class="entry-title">{item.title}</h3>
+          <span class="card-meta">{item.note ?? item.venue}</span>
+        </div>
+      </header>
+      <p><strong>{item.authors}</strong></p>
+      {item.note && <p>{item.venue}</p>}
+      <div class="inline-links">
+        {item.links.map((link) => (
+          <a class="inline-link" href={link.href} target="_blank" rel="noreferrer">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </article>
+  ))}
+</div>
+
