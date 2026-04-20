@@ -1,6 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
-import BlogPreview from '../components/BlogPreview.astro';
 import ContactSection from '../components/ContactSection.astro';
 import ExperienceTimeline from '../components/ExperienceTimeline.astro';
 import HeroSection from '../components/HeroSection.astro';
@@ -9,22 +7,16 @@ import PublicationList from '../components/PublicationList.astro';
 import SectionBlock from '../components/SectionBlock.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { education, experiences, featuredWork, publications, siteMeta, skillGroups } from '../data/site';
-
-const posts = (await getCollection('blog', ({ data }) => (import.meta.env.PROD ? data.draft !== true : true))).sort(
-  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
-);
-
-const featuredPosts = posts.slice(0, 2);
 ---
 
-<BaseLayout title="André Brandão | Backend Engineer" description={siteMeta.summary}>
+<BaseLayout title="André Brandão | Backend Developer" description={siteMeta.summary}>
   <HeroSection />
 
   <SectionBlock
     id="experience"
     kicker="Experience"
-    title="Shipping backend work across internships, research, and operations-heavy environments."
-    intro="The throughline is practical backend engineering: APIs, data flows, messaging, observability, and systems that have to hold up in production."
+    title="Building backend systems across APIs, data pipelines, observability, and production-oriented internships."
+    intro="The common thread is ownership: services, messaging, analytical storage, reliability tooling, and backend work that has to support real usage."
   >
     <ExperienceTimeline items={experiences} />
   </SectionBlock>
@@ -32,26 +24,17 @@ const featuredPosts = posts.slice(0, 2);
   <SectionBlock
     id="projects"
     kicker="Featured work"
-    title="Selected work with a bias for backend depth and reproducible engineering."
-    intro="A mix of research artifacts and engineering reports that show how I think about systems, measurement, and implementation detail."
+    title="Selected engineering case studies from backend delivery and performance work."
+    intro="These cards focus on production-oriented systems work rather than research, with a few concrete metrics where they materially show impact."
   >
     <ProjectGrid items={featuredWork} />
   </SectionBlock>
 
   <SectionBlock
-    id="publications"
-    kicker="Research"
-    title="Current publications and academic work."
-    intro="Research is where I sharpen measurement, experimental rigor, and long-form technical writing."
-  >
-    <PublicationList items={publications} />
-  </SectionBlock>
-
-  <SectionBlock
     id="skills"
-    kicker="Capabilities"
-    title="A backend-focused toolkit shaped by services, data, and reliability work."
-    intro="These are the technologies and areas that show up most consistently in the work above."
+    kicker="Skills"
+    title="A backend-focused toolkit shaped by services, data systems, testing, and observability."
+    intro="The emphasis is on tools and concepts that repeatedly appeared across delivery work, not a broad list of everything I have touched."
   >
     <div class="project-grid">
       {skillGroups.map((group) => (
@@ -72,8 +55,8 @@ const featuredPosts = posts.slice(0, 2);
   <SectionBlock
     id="education"
     kicker="Education"
-    title="Formal training grounded in software engineering practice."
-    intro="Current academic work is tightly connected to the systems and measurement themes running through the portfolio."
+    title="Formal training that supports practical software engineering work."
+    intro="The academic side stays visible, but the portfolio is intentionally grounded in backend delivery rather than research-first positioning."
   >
     <div class="education-grid">
       {education.map((item) => (
@@ -96,14 +79,13 @@ const featuredPosts = posts.slice(0, 2);
   </SectionBlock>
 
   <SectionBlock
-    id="writing"
-    kicker="Writing"
-    title="Notes on backend engineering, energy efficiency, and long-term craftsmanship."
-    intro="The blog starts small on purpose: a few well-scoped posts, static by design, and easy to maintain."
+    id="publications"
+    kicker="Research"
+    title="Publications and academic work."
+    intro="Research stays secondary here, but it reflects how I approach measurement, rigor, and long-form technical thinking."
   >
-    <BlogPreview posts={featuredPosts} />
+    <PublicationList items={publications} />
   </SectionBlock>
 
   <ContactSection />
 </BaseLayout>
-

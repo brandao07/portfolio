@@ -17,18 +17,27 @@ const resolveHref = (href: string) => (href.startsWith('/') ? `${base}${href.sli
         <h3 class="card-title">{item.title}</h3>
       </header>
       <p>{item.description}</p>
+      {item.highlights && item.highlights.length > 0 && (
+        <ul class="project-highlights">
+          {item.highlights.map((highlight) => (
+            <li set:html={highlight}></li>
+          ))}
+        </ul>
+      )}
       <div class="tag-list" aria-label={`${item.title} tags`}>
         {item.tags.map((tag) => (
           <span class="tag">{tag}</span>
         ))}
       </div>
-      <div class="inline-links">
-        {item.links.map((link) => (
-          <a class="inline-link" href={resolveHref(link.href)} target="_blank" rel="noreferrer">
-            {link.label}
-          </a>
-        ))}
-      </div>
+      {item.links && item.links.length > 0 && (
+        <div class="inline-links">
+          {item.links.map((link) => (
+            <a class="inline-link" href={resolveHref(link.href)} target="_blank" rel="noreferrer">
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
     </article>
   ))}
 </div>

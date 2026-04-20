@@ -41,7 +41,8 @@ export type ProjectEntry = {
   title: string;
   description: string;
   tags: string[];
-  links: ArtifactLink[];
+  highlights?: string[];
+  links?: ArtifactLink[];
 };
 
 export type EducationEntry = {
@@ -54,12 +55,12 @@ export type EducationEntry = {
 export const siteMeta = {
   name: 'Andre Brandao',
   displayName: 'André Brandão',
-  role: 'Backend Engineer',
-  title: 'Backend engineer focused on reliable services and data-heavy systems.',
+  role: 'Backend Developer',
+  title: '"I like designing backend systems as much as building them."',
   summary:
-    "I'm finishing a Master's in Software Engineering and looking for backend roles where Go, distributed systems, data infrastructure, and observability matter.",
+    'Backend developer with hands-on experience building Go microservices, APIs, and data-heavy backend systems. Comfortable with ownership across delivery, testing, observability, and technical collaboration.',
   availability:
-    'Available for backend engineering roles and conversations around production systems, platform work, and green software research.',
+    'Based in Portugal, available to start ASAP, and open to remote roles and relocation for strong backend opportunities.',
   email: 'brandao.business@hotmail.com',
   github: 'https://github.com/brandao07',
   linkedin: 'https://www.linkedin.com/in/andre-brandao07/',
@@ -72,30 +73,38 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const heroStats: HeroStat[] = [
-  { value: '5', label: 'industry roles' },
-  { value: '2', label: 'research outputs' },
-  { value: 'Go', label: 'strongest backend lane' },
+  { value: '60s -> 30ms', label: 'worst-case dashboard query' },
+  { value: '10k records/s', label: 'validated ingestion burst' },
+  { value: '15+ endpoints', label: 'wallet backend delivery' },
 ];
 
 export const focusAreas = [
-  'Go services',
-  'Distributed systems',
-  'Data infrastructure',
-  'Observability and ops',
+  'Go microservices',
+  'APIs',
+  'Event-driven systems',
+  'Analytical data platforms',
 ];
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: 'Languages and frameworks',
-    items: ['Go', 'Java', 'Python', 'Node.js', 'Spring'],
+    title: 'Programming languages',
+    items: ['Go', 'Java', 'Python'],
   },
   {
-    title: 'Data and messaging',
-    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'ClickHouse', 'RabbitMQ', 'Redpanda'],
+    title: 'Backend and data',
+    items: ['REST APIs', 'Microservices', 'API', 'PostgreSQL', 'ClickHouse', 'Redis', 'RabbitMQ', 'Redpanda Connect', 'Spring Boot'],
   },
   {
-    title: 'Infrastructure and tooling',
-    items: ['Docker', 'Kubernetes', 'Google Cloud', 'Azure', 'Ansible', 'Grafana', 'Prometheus'],
+    title: 'Testing and delivery',
+    items: ['Unit testing', 'Integration testing', 'E2E testing', 'Testcontainers', 'GitHub Actions'],
+  },
+  {
+    title: 'Observability and infrastructure',
+    items: ['Docker', 'Prometheus', 'Grafana', 'Kibana', 'Filebeat', 'Ansible'],
+  },
+  {
+    title: 'Academic exposure',
+    items: ['Kubernetes', 'Google Cloud Platform'],
   },
 ];
 
@@ -104,29 +113,20 @@ export const experiences: ExperienceEntry[] = [
     role: 'Backend Developer Intern',
     company: 'Yari Labs',
     href: 'https://www.yarilabs.com/',
-    period: 'Oct 2025 – Apr 2026',
+    period: 'Jun 2025 – Apr 2026',
     summary:
-      'Worked on backend systems and production services with a focus on commerce integrations, data movement, and operational reliability.',
-    technologies: ['Go', 'Docker', 'PostgreSQL', 'ClickHouse', 'Redis', 'RabbitMQ', 'Shopify API', 'Redpanda'],
-  },
-  {
-    role: 'Backend Developer Intern',
-    company: 'Yari Labs',
-    href: 'https://www.yarilabs.com/',
-    period: 'Jun 2025 – Jul 2025',
-    summary:
-      'Summer internship focused on backend development and data infrastructure, building services and working with analytical storage.',
-    technologies: ['Go', 'Docker', 'PostgreSQL', 'ClickHouse'],
+      'Built and refactored Go microservices and a layered API for a multi-tenant analytics MVP, introduced RabbitMQ-based Shopify webhook flows, and helped drive Redpanda Connect ingestion plus ClickHouse work that cut a worst-case dashboard query from <strong>over 60 seconds</strong> to <strong>under 30 milliseconds</strong>.',
+    technologies: ['Go', 'Docker', 'PostgreSQL', 'ClickHouse', 'Redis', 'RabbitMQ', 'Shopify API', 'Redpanda Connect'],
     artifacts: [{ label: 'Internship certificate', href: '/assets/Internship-Certificate.pdf' }],
   },
   {
-    role: 'Site Reliability Engineer',
+    role: 'Site Reliability Engineer Intern',
     company: 'Cachapuz',
     href: 'https://www.cachapuz.com/',
     period: 'Sep 2024 – Jan 2025',
     summary:
-      "Curricular internship centered on observability and infrastructure reliability, with tooling across monitoring, logging, and cloud environments.",
-    technologies: ['Prometheus', 'Grafana', 'Filebeat', 'Kibana', 'Ansible', 'Azure', 'Go'],
+      'Implemented centralized observability for application logs and system metrics with Prometheus, Kibana, Elasticsearch, and APM agents, giving teams shared visibility into monitored applications.',
+    technologies: ['Prometheus', 'Kibana', 'Elasticsearch', 'APM', 'Grafana', 'Filebeat', 'Ansible', 'Azure'],
   },
   {
     role: 'Backend Developer Intern',
@@ -134,7 +134,7 @@ export const experiences: ExperienceEntry[] = [
     href: 'https://www.edreamsodigeo.com/',
     period: 'Feb 2023 – Jun 2023',
     summary:
-      "Built on a digital wallet system during a bachelor's internship, working across APIs, security, persistence, and third-party payment flows.",
+      'Owned the backend implementation of <strong>two Java Spring Boot microservices</strong> for a digital wallet system, delivering <strong>15+ REST endpoints</strong> for accounts, transactions, PayPal payments, and exchange-rate workflows with end-to-end responsibility across API design, business logic, caching, testing, and documentation.',
     technologies: ['Java', 'Spring Boot', 'Spring Security', 'PostgreSQL', 'Redis', 'Docker', 'JUnit', 'Swagger', 'PayPal API'],
     artifacts: [{ label: 'Internship report', href: '/assets/dws.pdf' }],
   },
@@ -144,7 +144,7 @@ export const experiences: ExperienceEntry[] = [
     href: 'https://www.tlantic.com/',
     period: 'Sep 2022 – Feb 2023',
     summary:
-      "Developed and deployed a full-stack application during a bachelor's internship, with responsibility across APIs, auth, and delivery.",
+      'Developed a Go REST API for a retail POS system, creating <strong>25+ endpoints</strong> for inventory, sales, and user management with PostgreSQL, Docker, and JWT while aligning weekly with product managers and a senior engineer on delivery goals.',
     technologies: ['Go', 'Gorilla Mux', 'PostgreSQL', 'Docker', 'JWT'],
     artifacts: [
       { label: 'Internship report', href: '/assets/pos.pdf' },
@@ -155,32 +155,42 @@ export const experiences: ExperienceEntry[] = [
 
 export const featuredWork: ProjectEntry[] = [
   {
-    title: "Master's thesis: programming language energy efficiency",
+    title: 'Analytics Platform and ClickHouse Optimization',
     description:
-      'Ongoing research towards a more accurate understanding of programming language energy efficiency, with supporting tooling and experimental workflows.',
-    tags: ['Research', 'Benchmarking', 'Energy efficiency'],
-    links: [{ label: 'GitHub repository', href: 'https://github.com/brandao07/mthesis' }],
-  },
-  {
-    title: 'The Green Side of Lua',
-    description:
-      'Workshop paper on software sustainability and language-level energy behavior, with a public replication package for reproducibility.',
-    tags: ['Publication', 'Lua', 'Green software'],
-    links: [
-      {
-        label: 'Workshop page',
-        href: 'https://conf.researchr.org/details/saner-2026/saner-2026-workshops-tutorials-track/16/The-Green-Side-of-the-Lua',
-      },
-      { label: 'Paper DOI', href: 'https://arxiv.org/abs/2601.16670' },
-      { label: 'Replication package', href: 'https://doi.org/10.6084/m9.figshare.29336132' },
+      'Case study from Yari Labs spanning Go microservices, a layered API, Shopify webhook processing, and ClickHouse-backed analytics for real-time dashboards.',
+    tags: ['Go', 'ClickHouse', 'RabbitMQ'],
+    highlights: [
+      'Cut a worst-case dashboard query from <strong>over 60 seconds</strong> to <strong>under 30 milliseconds</strong>.',
+      'Validated Redpanda Connect ingestion bursts around <strong>10k records per second</strong>.',
+      'Built backend flows and analytics queries that powered real-time dashboard widgets.',
     ],
   },
   {
-    title: 'Digital wallet engineering report',
+    title: 'Digital Wallet Backend',
     description:
-      'A practical backend artifact from the eDreams ODIGEO internship covering the wallet system work, architecture choices, and implementation details.',
-    tags: ['Backend', 'Payments', 'Java'],
-    links: [{ label: 'Report PDF', href: '/assets/dws.pdf' }],
+      'Backend implementation for a digital wallet system at eDreams ODIGEO, covering APIs, business logic, integrations, caching, testing, and delivery documentation.',
+    tags: ['Java', 'Spring Boot', 'Payments'],
+    highlights: [
+      'Delivered <strong>15+ REST endpoints</strong> across <strong>two Spring Boot microservices</strong>.',
+      'Owned accounts, transactions, PayPal, and exchange-rate workflows end to end.',
+      'Used Redis caching, PostgreSQL, Docker, JUnit, Swagger, and Spring Security.',
+    ],
+    links: [{ label: 'Internship report', href: '/assets/dws.pdf' }],
+  },
+  {
+    title: 'Retail POS API',
+    description:
+      'Go API work for a retail POS system at Tlantic, focused on inventory, sales, user management, authentication, and steady delivery coordination.',
+    tags: ['Go', 'PostgreSQL', 'JWT'],
+    highlights: [
+      'Built <strong>25+ endpoints</strong> for inventory, sales, and user management.',
+      'Worked with PostgreSQL, Docker, and JWT in a production-oriented backend setting.',
+      'Coordinated weekly with product managers and a senior engineer on scope and delivery.',
+    ],
+    links: [
+      { label: 'Internship report', href: '/assets/pos.pdf' },
+      { label: 'App showcase', href: 'https://www.youtube.com/watch?v=xsCyOhg4SyU' },
+    ],
   },
 ];
 
@@ -211,13 +221,17 @@ export const education: EducationEntry[] = [
   {
     degree: 'M.E., Software Engineering',
     institution: 'University of Minho',
-    period: 'Present',
-    details: ['Specializations in Full-Stack Engineering and Software Development (Validation and Maintenance).'],
+    period: 'Sep 2023 – Oct 2026',
+    details: [
+      "Expected graduation: Oct 2026. Master's thesis in progress; available to start full-time while completing the degree.",
+      'Specializations in Full-Stack Engineering and Software Development (Validation and Maintenance).',
+    ],
   },
   {
     degree: 'B.E., Software Engineering',
     institution: 'Polytechnic Institute of Viana do Castelo',
-    period: 'Jul 2023',
+    period: 'Oct 2020 – Jul 2023',
+    details: ['GPA: 15.2 / 20.'],
   },
 ];
 
@@ -228,4 +242,3 @@ const dateFormatter = new Intl.DateTimeFormat('en', {
 });
 
 export const formatDate = (value: Date) => dateFormatter.format(value);
-

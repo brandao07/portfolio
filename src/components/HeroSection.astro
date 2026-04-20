@@ -7,9 +7,11 @@ const base = import.meta.env.BASE_URL;
 <section class="hero">
   <article class="hero-panel motion-rise">
     <div class="hero-content">
-      <span class="eyebrow">Open to backend roles</span>
-      <p class="hero-role">{siteMeta.role}</p>
-      <h1 class="display">{siteMeta.title}</h1>
+      <div class="hero-heading">
+        <span class="eyebrow">Open to backend roles</span>
+        <p class="hero-role">{siteMeta.role}</p>
+        <h1 class="display">{siteMeta.title}</h1>
+      </div>
       <p class="lead">{siteMeta.summary}</p>
       <div class="chip-list" aria-label="Focus areas">
         {focusAreas.map((item) => (
@@ -18,7 +20,7 @@ const base = import.meta.env.BASE_URL;
       </div>
       <div class="cta-row">
         <a class="button button-primary" href={`mailto:${siteMeta.email}`}>Start a conversation</a>
-        <a class="button button-secondary" href={`${base}blog/`}>Read the blog</a>
+        <a class="button button-secondary" href={`${base}#projects`}>View featured work</a>
       </div>
       <div class="hero-stats">
         {heroStats.map((item) => (

@@ -23,7 +23,7 @@ const resolveHref = (href: string) => (href.startsWith('/') ? `${base}${href.sli
           <span class="entry-period">{item.period}</span>
         </div>
       </header>
-      <p>{item.summary}</p>
+      <p set:html={item.summary}></p>
       <div class="chip-list" aria-label={`${item.company} technologies`}>
         {item.technologies.map((tech) => (
           <span class="chip">{tech}</span>
