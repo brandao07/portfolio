@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--anchor-offset);
+  background:
+    radial-gradient(circle at top left, rgba(231, 136, 149, 0.2), transparent 28%),
+    radial-gradient(circle at top right, rgba(190, 209, 207, 0.22), transparent 26%),
+    radial-gradient(circle at 50% 100%, rgba(255, 228, 201, 0.55), transparent 42%),
+    linear-gradient(180deg, #fffdf9 0%, var(--bg) 38%, #ffeede 100%);
+  color: var(--ink);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, rgba(231, 136, 149, 0.03), rgba(190, 209, 207, 0.02)),
+    linear-gradient(180deg, #fffdf9 0%, var(--bg) 100%);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(231, 136, 149, 0.24);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-lg);
+  top: -3rem;
+  z-index: 20;
+  padding: 0.75rem var(--space-lg);
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: #fff;
+}
+
+.skip-link:focus {
+  top: var(--space-lg);
+}
+
+.motion-rise {
+  animation: rise var(--duration-rise) var(--ease-standard) both;
+}
+
+.motion-rise:nth-child(2) {
+  animation-delay: 70ms;
+}
+
+.motion-rise:nth-child(3) {
+  animation-delay: 140ms;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,83 @@
+:root {
+  --bg: #fff7f1;
+  --ink: #2b2e4a;
+  --muted: #635a67;
+  --accent: #e78895;
+  --accent-strong: #c56e7b;
+  --accent-warm: #bed1cf;
+  --accent-gradient-start: #d97786;
+  --surface: rgba(255, 247, 241, 0.86);
+  --surface-solid: rgba(255, 247, 241, 0.9);
+  --surface-overlay: rgba(255, 255, 255, 0.46);
+  --surface-raised: rgba(255, 242, 229, 0.78);
+  --surface-block: rgba(255, 242, 229, 0.72);
+  --surface-highlight: rgba(255, 245, 239, 0.95);
+  --surface-chip: rgba(190, 209, 207, 0.18);
+  --surface-chip-strong: rgba(190, 209, 207, 0.22);
+  --surface-chip-hover: rgba(190, 209, 207, 0.28);
+  --surface-chip-interactive: rgba(190, 209, 207, 0.3);
+  --surface-chip-interactive-hover: rgba(190, 209, 207, 0.42);
+  --surface-code: rgba(190, 209, 207, 0.22);
+  --surface-success: rgba(190, 209, 207, 0.34);
+  --surface-error: rgba(231, 136, 149, 0.16);
+  --surface-form-field: rgba(255, 253, 249, 0.92);
+  --line: rgba(43, 46, 74, 0.1);
+  --line-subtle: rgba(43, 46, 74, 0.07);
+  --line-soft: rgba(43, 46, 74, 0.08);
+  --line-strong: rgba(43, 46, 74, 0.12);
+  --chip-border: rgba(190, 209, 207, 0.56);
+  --chip-border-strong: rgba(190, 209, 207, 0.72);
+  --success-border: rgba(190, 209, 207, 0.8);
+  --error-border: rgba(231, 136, 149, 0.34);
+  --success-ink: #355f57;
+  --error-ink: #8f4d5a;
+  --accent-outline: rgba(197, 110, 123, 0.14);
+  --accent-outline-strong: rgba(197, 110, 123, 0.26);
+  --accent-border-strong: rgba(197, 110, 123, 0.3);
+  --focus-outline: rgba(217, 119, 134, 0.18);
+  --focus-border: rgba(197, 110, 123, 0.42);
+  --shadow: 0 24px 64px rgba(95, 82, 103, 0.1);
+  --shadow-accent-soft: 0 18px 32px rgba(217, 119, 134, 0.22);
+  --shadow-accent-hover: 0 16px 28px rgba(217, 119, 134, 0.12);
+  --shadow-accent: 0 24px 56px rgba(197, 110, 123, 0.18);
+  --radius: 28px;
+  --radius-card: 24px;
+  --radius-md: 20px;
+  --radius-sm: 18px;
+  --radius-xs: 16px;
+  --radius-pill: 999px;
+  --space-2xs: 0.35rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.7rem;
+  --space-md: 0.8rem;
+  --space-lg: 1rem;
+  --space-xl: 1.15rem;
+  --space-2xl: 1.4rem;
+  --duration-fast: 180ms;
+  --duration-slow: 420ms;
+  --duration-rise: 700ms;
+  --ease-standard: ease;
+  --transition-interactive:
+    background-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+  --transition-lift:
+    transform var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard);
+  --transition-lift-bordered:
+    transform var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard);
+  --transition-card:
+    border-color var(--duration-slow) var(--ease-standard),
+    box-shadow var(--duration-slow) var(--ease-standard);
+  --transition-fade: opacity var(--duration-slow) var(--ease-standard);
+  --anchor-offset: 3.5rem;
+  --header-height: 4.5rem;
+  --page-fill-offset: 11rem;
+  --content-width: min(1120px, calc(100% - 2rem));
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-display: var(--font-body);
+}

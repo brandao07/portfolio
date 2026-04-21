@@ -1,0 +1,154 @@
+:is(
+  .hero-panel,
+  .hero-aside,
+  .section-card,
+  .post-card,
+  .timeline-item,
+  .project-card,
+  .publication-card,
+  .contact-card,
+  .education-card,
+  .not-found-card,
+  .aside-card
+) {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.timeline-item,
+.publication-card,
+.project-card,
+.education-card,
+.post-card {
+  border-radius: var(--radius-card);
+  padding: 1.1rem;
+}
+
+.chip-list,
+.tag-list,
+.cta-row,
+.meta-list,
+.skills-list,
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.inline-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.chip,
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface-chip);
+  border: 1px solid var(--chip-border);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.cta-row {
+  margin-top: 1.6rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.8rem 1.15rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition-lift);
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--accent-gradient-start), var(--accent-strong));
+  color: #fff;
+  box-shadow: var(--shadow-accent-soft);
+}
+
+.button-secondary {
+  background: var(--surface-chip-strong);
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+:is(.timeline-item, .publication-card, .project-card, .post-card) header {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 0.75rem;
+}
+
+.entry-title,
+.card-title {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+.entry-title a,
+.card-title a,
+.education-card strong a,
+.footer a {
+  text-decoration: none;
+}
+
+.entry-title a:hover,
+.entry-title a:focus-visible,
+.card-title a:hover,
+.card-title a:focus-visible,
+.education-card strong a:hover,
+.education-card strong a:focus-visible,
+.inline-link:hover,
+.inline-link:focus-visible,
+.footer a:hover,
+.footer a:focus-visible,
+.brand:hover,
+.brand:focus-visible {
+  color: var(--accent);
+}
+
+.entry-period,
+.card-meta {
+  color: var(--muted);
+}
+
+:is(.timeline-item, .publication-card, .project-card, .post-card, .education-card, .contact-card) p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.timeline-item strong {
+  color: var(--ink);
+}
+
+.inline-link {
+  color: var(--accent-strong);
+  font-weight: 700;
+  text-decoration: none;
+}
