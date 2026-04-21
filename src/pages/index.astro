@@ -1,99 +1,49 @@
 ---
 import ContactSection from '../components/ContactSection.astro';
+import EducationGrid from '../components/EducationGrid.astro';
 import ExperienceTimeline from '../components/ExperienceTimeline.astro';
 import HeroSection from '../components/HeroSection.astro';
 import ProjectGrid from '../components/ProjectGrid.astro';
+import ResearchTeaser from '../components/ResearchTeaser.astro';
 import SectionBlock from '../components/SectionBlock.astro';
+import SkillGroupGrid from '../components/SkillGroupGrid.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { education, experiences, featuredWork, siteMeta, skillGroups } from '../data/site';
-
-const base = import.meta.env.BASE_URL;
+import {
+  education,
+  educationSection,
+  experienceSection,
+  experiences,
+  featuredWork,
+  projectsSection,
+  researchSection,
+  researchTeaserLabel,
+  skillGroups,
+  skillsSection,
+} from '../data/portfolio';
+import { siteMeta } from '../data/site';
 ---
 
 <BaseLayout title="André Brandão | Backend Developer" description={siteMeta.summary}>
   <HeroSection />
 
-  <SectionBlock
-    id="experience"
-    kicker="Experience"
-    title="Building backend systems across APIs, data pipelines, observability, and production-oriented internships."
-    intro="APIs, messaging, analytical storage, and reliability work with real delivery constraints."
-  >
+  <SectionBlock {...experienceSection}>
     <ExperienceTimeline items={experiences} />
   </SectionBlock>
 
-  <SectionBlock
-    id="projects"
-    kicker="Featured work"
-    title="Selected engineering case studies from backend delivery and performance work."
-    intro="Three compact case studies from backend delivery, performance, and product-facing systems work."
-  >
+  <SectionBlock {...projectsSection}>
     <ProjectGrid items={featuredWork} />
   </SectionBlock>
 
-  <SectionBlock
-    id="skills"
-    kicker="Skills"
-    title="A backend-focused toolkit shaped by services, data systems, testing, and observability."
-    intro="Tools and concepts that keep showing up in backend delivery."
-  >
-    <div class="project-grid">
-      {skillGroups.map((group) => (
-        <article class="project-card">
-          <header>
-            <h3 class="card-title">{group.title}</h3>
-          </header>
-          <div class="skills-list">
-            {group.items.map((item) => (
-              <span class="chip">{item}</span>
-            ))}
-          </div>
-        </article>
-      ))}
-    </div>
+  <SectionBlock {...skillsSection}>
+    <SkillGroupGrid items={skillGroups} />
   </SectionBlock>
 
-  <SectionBlock
-    id="education"
-    kicker="Education"
-    title="Formal training that supports practical software engineering work."
-    intro="Academic grounding that supports production-focused engineering work."
-  >
-    <div class="education-grid">
-      {education.map((item) => (
-        <article class="education-card">
-          <h3>{item.degree}</h3>
-          <p>
-            <strong>
-              {item.institutionHref ? (
-                <a href={item.institutionHref} target="_blank" rel="noreferrer">{item.institution}</a>
-              ) : (
-                item.institution
-              )}
-            </strong>
-          </p>
-          <p>{item.period}</p>
-          {item.details && (
-            <ul>
-              {item.details.map((detail) => (
-                <li>{detail}</li>
-              ))}
-            </ul>
-          )}
-        </article>
-      ))}
-    </div>
+  <SectionBlock {...educationSection}>
+    <EducationGrid items={education} />
   </SectionBlock>
 
-  <SectionBlock
-    id="research"
-    kicker="Research"
-    title="Research stays visible, but secondary."
-    intro="I keep academic work separate from the main hiring narrative, but it still reflects how I approach rigor, measurement, and technical depth."
-  >
-    <article class="research-teaser">
-      <a class="button button-secondary" href={`${base}research/`}>See research and publications</a>
-    </article>
+  <SectionBlock {...researchSection}>
+    <ResearchTeaser label={researchTeaserLabel} />
   </SectionBlock>
 
   <ContactSection />

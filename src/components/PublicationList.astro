@@ -1,5 +1,6 @@
 ---
-import type { PublicationEntry } from '../data/site';
+import type { PublicationEntry } from '../data/research';
+import ResourceLinks from './ResourceLinks.astro';
 
 interface Props {
   items: PublicationEntry[];
@@ -19,14 +20,7 @@ const { items } = Astro.props;
       </header>
       <p><strong>{item.authors}</strong></p>
       {item.note && <p>{item.venue}</p>}
-      <div class="inline-links">
-        {item.links.map((link) => (
-          <a class="inline-link" href={link.href} target="_blank" rel="noreferrer">
-            {link.label}
-          </a>
-        ))}
-      </div>
+      <ResourceLinks items={item.links} />
     </article>
   ))}
 </div>
-

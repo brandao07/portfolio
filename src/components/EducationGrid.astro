@@ -1,0 +1,34 @@
+---
+import type { EducationEntry } from '../data/portfolio';
+
+interface Props {
+  items: EducationEntry[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="education-grid">
+  {items.map((item) => (
+    <article class="education-card">
+      <h3>{item.degree}</h3>
+      <p>
+        <strong>
+          {item.institutionHref ? (
+            <a href={item.institutionHref} target="_blank" rel="noreferrer">{item.institution}</a>
+          ) : (
+            item.institution
+          )}
+        </strong>
+      </p>
+      <p>{item.period}</p>
+      {item.details && (
+        <ul>
+          {item.details.map((detail) => (
+            <li>{detail}</li>
+          ))}
+        </ul>
+      )}
+    </article>
+  ))}
+</div>

@@ -1,26 +1,21 @@
 ---
-import type { ProjectEntry } from '../data/site';
+import type { ProjectEntry } from '../data/portfolio';
+import ResourceLinks from './ResourceLinks.astro';
 
 interface Props {
   items: ProjectEntry[];
 }
 
 const { items } = Astro.props;
-const base = import.meta.env.BASE_URL;
-const resolveHref = (href: string) => (href.startsWith('/') ? `${base}${href.slice(1)}` : href);
 ---
 
 <div class="project-grid">
   {items.map((item) => (
     <article class="project-card" id={item.id}>
-      {(() => {
-        const metrics = item.metrics?.length ? item.metrics : [{ value: item.metric, label: item.metricLabel }];
-
-        return (
       <header>
         <h3 class="card-title">{item.title}</h3>
         <div class="metric-row" aria-label={`${item.title} key metrics`}>
-          {metrics.map((metric) => (
+          {item.metrics.map((metric) => (
             <div class="metric-card" aria-label={metric.label}>
               <span class="metric-value">{metric.value}</span>
               <span class="metric-label">{metric.label}</span>
@@ -29,8 +24,6 @@ const resolveHref = (href: string) => (href.startsWith('/') ? `${base}${href.sli
         </div>
         <p class="case-study-context">{item.context}</p>
       </header>
-        );
-      })()}
       <div class="case-study-grid">
         <article class="case-study-block">
           <h4 class="case-study-label">Problem</h4>
@@ -50,23 +43,15 @@ const resolveHref = (href: string) => (href.startsWith('/') ? `${base}${href.sli
           <span class="tag">{tag}</span>
         ))}
       </div>
-      {item.links && item.links.length > 0 && (
-        <div class="inline-links">
-          {item.links.map((link) => (
-            <a class="inline-link" href={resolveHref(link.href)} target="_blank" rel="noreferrer">
-              {link.label}
-            </a>
-          ))}
-        </div>
-      )}
+      <ResourceLinks items={item.links} />
     </article>
   ))}
 </div>
 
 <script>
   const highlightDurationMs = 1500;
-  let activeCard;
-  let activeTimeoutId;
+  let activeCard: HTMLElement | undefined;
+  let activeTimeoutId: number | undefined;
 
   const clearHighlight = () => {
     if (!(activeCard instanceof HTMLElement)) return;
@@ -74,9 +59,7 @@ const resolveHref = (href: string) => (href.startsWith('/') ? `${base}${href.sli
     activeCard = undefined;
   };
 
-  const highlightCard = (card) => {
-    if (!(card instanceof HTMLElement)) return;
-
+  const highlightCard = (card: HTMLElement) => {
     window.clearTimeout(activeTimeoutId);
     clearHighlight();
 
@@ -93,7 +76,7 @@ const resolveHref = (href: string) => (href.startsWith('/') ? `${base}${href.sli
     }, highlightDurationMs);
   };
 
-  const scrollToCaseStudy = (id, smooth = true) => {
+  const scrollToCaseStudy = (id: string, smooth = true) => {
     if (!id) return;
 
     const card = document.getElementById(id);
@@ -106,10 +89,8 @@ const resolveHref = (href: string) => (href.startsWith('/') ? `${base}${href.sli
     highlightCard(card);
   };
 
-  document.querySelectorAll('[data-case-study-link]').forEach((link) => {
-    if (!(link instanceof HTMLAnchorElement)) return;
-
-    link.addEventListener('click', (event) => {
+  document.querySelectorAll<HTMLAnchorElement>('[data-case-study-link]').forEach((link) => {
+    link.addEventListener('click', (event: MouseEvent) => {
       const targetId = new URL(link.href).hash.replace('#', '');
       if (!targetId) return;
 

@@ -1,23 +1,23 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { formatDate } from '../data/site';
+import { formatBlogDate } from '../data/blog';
+import { toSitePath } from '../lib/site-paths';
 
 interface Props {
   post: CollectionEntry<'blog'>;
 }
 
 const { post } = Astro.props;
-const base = import.meta.env.BASE_URL;
 ---
 
 <article class="post-card">
   <header>
     <div class="title-row">
       <h3 class="card-title">
-        <a href={`${base}blog/${post.id}/`}>{post.data.title}</a>
+        <a href={toSitePath(`/blog/${post.id}/`)}>{post.data.title}</a>
       </h3>
       <time class="card-meta" datetime={post.data.publishDate.toISOString()}>
-        {formatDate(post.data.publishDate)}
+        {formatBlogDate(post.data.publishDate)}
       </time>
     </div>
   </header>
@@ -30,4 +30,3 @@ const base = import.meta.env.BASE_URL;
     </div>
   )}
 </article>
-

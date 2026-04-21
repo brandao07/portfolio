@@ -1,12 +1,10 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+import { getBlogPosts } from '../data/blog';
 import { siteMeta } from '../data/site';
+import { toSitePath } from '../lib/site-paths';
 
 export async function GET(context: { site: URL | undefined }) {
-  const base = import.meta.env.BASE_URL;
-  const posts = (await getCollection('blog', ({ data }) => data.draft !== true)).sort(
-    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
-  );
+  const posts = await getBlogPosts(false);
 
   return rss({
     title: `${siteMeta.displayName} | Writing`,
@@ -16,7 +14,7 @@ export async function GET(context: { site: URL | undefined }) {
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.publishDate,
-      link: `${base}blog/${post.id}/`,
+      link: toSitePath(`/blog/${post.id}/`),
       categories: post.data.tags,
     })),
   });

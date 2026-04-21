@@ -1,29 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
 import PostCard from '../../components/PostCard.astro';
+import { getBlogPosts, getSortedBlogTags } from '../../data/blog';
+import { toSitePath } from '../../lib/site-paths';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const posts = (await getCollection('blog', ({ data }) => (import.meta.env.PROD ? data.draft !== true : true))).sort(
-  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
-);
-
-const tagCounts = posts.reduce<Map<string, number>>((acc, post) => {
-  for (const tag of post.data.tags) {
-    acc.set(tag, (acc.get(tag) ?? 0) + 1);
-  }
-  return acc;
-}, new Map());
-
-const sortedTags = [...tagCounts.entries()].sort((a, b) => {
-  if (b[1] === a[1]) {
-    return a[0].localeCompare(b[0]);
-  }
-  return b[1] - a[1];
-});
+const posts = await getBlogPosts();
+const sortedTags = getSortedBlogTags(posts);
 ---
 
 <BaseLayout title="Writing | André Brandão" description="Short notes on backend engineering, research, and systems thinking.">
-  <a class="back-link" href={`${import.meta.env.BASE_URL}`}>← Back to portfolio</a>
+  <a class="back-link" href={toSitePath()}>← Back to portfolio</a>
 
   <section class="section-card motion-rise">
     <header class="section-head">
@@ -55,4 +41,3 @@ const sortedTags = [...tagCounts.entries()].sort((a, b) => {
     </div>
   </section>
 </BaseLayout>
-

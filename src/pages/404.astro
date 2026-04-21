@@ -1,4 +1,5 @@
 ---
+import { toSitePath } from '../lib/site-paths';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
@@ -12,10 +13,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         The link may be outdated, or the page might have moved while the portfolio was being rebuilt.
       </p>
       <div class="cta-row" style="justify-content: center;">
-        <a class="button button-primary" href={`${import.meta.env.BASE_URL}`}>Return home</a>
-        <a class="button button-secondary" href={`${import.meta.env.BASE_URL}blog/`}>Browse writing</a>
+        <a class="button button-primary" href={toSitePath()}>Return home</a>
+        <a class="button button-secondary" href={toSitePath('/blog/')}>Browse writing</a>
       </div>
     </section>
   </div>
 </BaseLayout>
-

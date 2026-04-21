@@ -1,10 +1,9 @@
 ---
 import PublicationList from '../components/PublicationList.astro';
 import SectionBlock from '../components/SectionBlock.astro';
+import { researchPageSection, publications } from '../data/research';
+import { toSitePath } from '../lib/site-paths';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { publications } from '../data/site';
-
-const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -12,14 +11,9 @@ const base = import.meta.env.BASE_URL;
   description="Research, publications, and academic work by André Brandão."
   fillViewport={true}
 >
-  <a class="button button-secondary back-link" href={base}>Back to portfolio</a>
+  <a class="button button-secondary back-link" href={toSitePath()}>Back to portfolio</a>
 
-  <SectionBlock
-    id="publications"
-    kicker="Research"
-    title="Research and academic work."
-    intro="This page keeps academic work visible without making it the center of the portfolio. The common thread is rigor, measurement, and long-form technical thinking."
-  >
+  <SectionBlock {...researchPageSection}>
     <PublicationList items={publications} />
   </SectionBlock>
 </BaseLayout>

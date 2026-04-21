@@ -1,0 +1,14 @@
+---
+import { toSitePath } from '../lib/site-paths';
+
+interface Props {
+  href?: string;
+  label: string;
+}
+
+const { href = '/research/', label } = Astro.props;
+---
+
+<article class="research-teaser">
+  <a class="button button-secondary" href={toSitePath(href)}>{label}</a>
+</article>

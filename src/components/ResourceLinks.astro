@@ -1,0 +1,20 @@
+---
+import type { ResourceLink } from '../data/portfolio';
+import { resolveLinkHref } from '../lib/site-paths';
+
+interface Props {
+  items?: ResourceLink[];
+}
+
+const { items = [] } = Astro.props;
+---
+
+{items.length > 0 && (
+  <div class="inline-links">
+    {items.map((item) => (
+      <a class="inline-link" href={resolveLinkHref(item.href)} target="_blank" rel="noreferrer">
+        {item.label}
+      </a>
+    ))}
+  </div>
+)}

@@ -1,0 +1,24 @@
+---
+import type { SkillGroup } from '../data/portfolio';
+
+interface Props {
+  items: SkillGroup[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="project-grid">
+  {items.map((group) => (
+    <article class="project-card">
+      <header>
+        <h3 class="card-title">{group.title}</h3>
+      </header>
+      <div class="skills-list">
+        {group.items.map((item) => (
+          <span class="chip">{item}</span>
+        ))}
+      </div>
+    </article>
+  ))}
+</div>
