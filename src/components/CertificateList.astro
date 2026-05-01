@@ -1,0 +1,32 @@
+---
+import type { CertificateEntry } from '../data/certificates';
+import { toSitePath } from '../lib/site-paths';
+
+interface Props {
+  items: CertificateEntry[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="certificate-list">
+  {items.map((item) => (
+    <article class="certificate-card">
+      <img class="certificate-logo" src={toSitePath(item.image)} alt="" loading="lazy" />
+      <div class="certificate-content">
+        <header>
+          <div class="title-row">
+            <h3 class="entry-title">{item.title}</h3>
+            <span class="card-meta">{item.date}</span>
+          </div>
+          <p class="certificate-issuer">{item.issuer}</p>
+        </header>
+        <div class="chip-list" aria-label={`${item.title} skills`}>
+          {item.skills.map((skill) => (
+            <span class="chip">{skill}</span>
+          ))}
+        </div>
+      </div>
+    </article>
+  ))}
+</div>

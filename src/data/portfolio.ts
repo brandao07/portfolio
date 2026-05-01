@@ -141,6 +141,16 @@ export const educationSection: SectionCopy = {
   intro: 'Academic grounding that supports production-focused engineering work.',
 };
 
+export const certificatesSection: SectionCopy = {
+  id: 'certificates',
+  kicker: 'Certificates',
+  title: 'Verified training, internships, and professional learning.',
+  intro:
+    'Certificates from internships, technical courses, and learning programs that back up the skills shown across the portfolio.',
+};
+
+export const certificatesTeaserLabel = 'See certificates';
+
 export const researchSection: SectionCopy = {
   id: 'research',
   kicker: 'Research',
@@ -174,6 +184,17 @@ export const skillGroups: SkillGroup[] = [
   },
 ];
 
+export const yariLabsTechnologies = [
+  'Go',
+  'Docker',
+  'PostgreSQL',
+  'ClickHouse',
+  'Redis',
+  'RabbitMQ',
+  'Shopify API',
+  'Redpanda Connect',
+];
+
 export const experiences: ExperienceEntry[] = [
   {
     role: 'Backend Developer Intern',
@@ -182,7 +203,7 @@ export const experiences: ExperienceEntry[] = [
     period: 'Jun 2025 – Apr 2026',
     summary:
       'Built and refactored Go microservices and a layered API for a multi-tenant analytics MVP, introduced RabbitMQ-based Shopify webhook flows, and helped drive Redpanda Connect ingestion plus ClickHouse work that cut a worst-case dashboard query from <strong>over 60 seconds</strong> to <strong>under 30 milliseconds</strong>.',
-    technologies: ['Go', 'Docker', 'PostgreSQL', 'ClickHouse', 'Redis', 'RabbitMQ', 'Shopify API', 'Redpanda Connect'],
+    technologies: yariLabsTechnologies,
     links: [{ label: 'Internship certificate', href: '/assets/Internship-Certificate.pdf' }],
   },
   {

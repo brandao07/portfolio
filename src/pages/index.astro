@@ -3,12 +3,14 @@ import ContactSection from '../components/ContactSection.astro';
 import EducationGrid from '../components/EducationGrid.astro';
 import ExperienceTimeline from '../components/ExperienceTimeline.astro';
 import HeroSection from '../components/HeroSection.astro';
+import PageTeaser from '../components/PageTeaser.astro';
 import ProjectGrid from '../components/ProjectGrid.astro';
-import ResearchTeaser from '../components/ResearchTeaser.astro';
 import SectionBlock from '../components/SectionBlock.astro';
 import SkillGroupGrid from '../components/SkillGroupGrid.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import {
+  certificatesSection,
+  certificatesTeaserLabel,
   education,
   educationSection,
   experienceSection,
@@ -38,12 +40,16 @@ import { siteMeta } from '../data/site';
     <SkillGroupGrid items={skillGroups} />
   </SectionBlock>
 
+  <SectionBlock {...certificatesSection}>
+    <PageTeaser href="/certificates/" label={certificatesTeaserLabel} />
+  </SectionBlock>
+
   <SectionBlock {...educationSection}>
     <EducationGrid items={education} />
   </SectionBlock>
 
   <SectionBlock {...researchSection}>
-    <ResearchTeaser label={researchTeaserLabel} />
+    <PageTeaser href="/research/" label={researchTeaserLabel} />
   </SectionBlock>
 
   <ContactSection />

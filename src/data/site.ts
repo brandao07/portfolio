@@ -26,6 +26,8 @@ export const siteMeta = {
 export const navigationItems: NavigationItem[] = [
   { label: 'Work', href: '#experience' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Certificates', href: '/certificates/' },
+  { label: 'Research', href: '/research/' },
   { label: 'Contact', href: '#contact' },
 ];
 

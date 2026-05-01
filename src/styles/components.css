@@ -6,6 +6,7 @@
   .timeline-item,
   .project-card,
   .publication-card,
+  .certificate-card,
   .contact-card,
   .education-card,
   .not-found-card,
@@ -19,6 +20,7 @@
 
 .timeline-item,
 .publication-card,
+.certificate-card,
 .project-card,
 .education-card,
 .post-card {
@@ -91,7 +93,7 @@
   border-color: var(--line);
 }
 
-:is(.timeline-item, .publication-card, .project-card, .post-card) header {
+:is(.timeline-item, .publication-card, .certificate-card, .project-card, .post-card) header {
   display: grid;
   gap: 0.45rem;
 }
@@ -138,7 +140,7 @@
   color: var(--muted);
 }
 
-:is(.timeline-item, .publication-card, .project-card, .post-card, .education-card, .contact-card) p {
+:is(.timeline-item, .publication-card, .certificate-card, .project-card, .post-card, .education-card, .contact-card) p {
   color: var(--muted);
   line-height: 1.75;
 }

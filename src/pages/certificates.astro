@@ -1,0 +1,19 @@
+---
+import CertificateList from '../components/CertificateList.astro';
+import SectionBlock from '../components/SectionBlock.astro';
+import { certificates, certificatesPageSection } from '../data/certificates';
+import { toSitePath } from '../lib/site-paths';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Certificates | André Brandão"
+  description="Certificates from internships, technical courses, and professional learning by André Brandão."
+  fillViewport={true}
+>
+  <a class="button button-secondary back-link" href={toSitePath()}>Back to portfolio</a>
+
+  <SectionBlock {...certificatesPageSection}>
+    <CertificateList items={certificates} />
+  </SectionBlock>
+</BaseLayout>

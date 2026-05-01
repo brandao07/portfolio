@@ -147,7 +147,7 @@
   color: var(--muted);
 }
 
-.research-teaser {
+.page-teaser {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -159,6 +159,38 @@
     linear-gradient(135deg, rgba(190, 209, 207, 0.22), rgba(255, 242, 229, 0.84)),
     var(--surface-solid);
   border: 1px solid var(--line);
+}
+
+.certificate-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.certificate-logo {
+  width: 3.6rem;
+  height: 3.6rem;
+  object-fit: contain;
+  border-radius: var(--radius-xs);
+  background: var(--surface-highlight);
+  border: 1px solid var(--line-soft);
+  padding: 0.5rem;
+}
+
+.certificate-content {
+  display: grid;
+  gap: var(--space-md);
+  min-width: 0;
+}
+
+.certificate-issuer {
+  margin: 0;
+  font-weight: 700;
+}
+
+.certificate-card .chip-list {
+  gap: var(--space-sm);
 }
 
 .prose {
