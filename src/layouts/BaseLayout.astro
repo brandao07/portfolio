@@ -96,9 +96,24 @@ const imageUrl = new URL(image, Astro.site).href;
         });
 
         primaryNavigation.addEventListener('click', (event) => {
-          if (event.target instanceof HTMLAnchorElement) {
+          if (!(event.target instanceof HTMLAnchorElement)) return;
+
+          const url = new URL(event.target.href);
+          const isCurrentPageAnchor =
+            url.origin === window.location.origin && url.pathname === window.location.pathname && url.hash;
+
+          if (!isCurrentPageAnchor) {
             setMenuState(false);
+            return;
           }
+
+          event.preventDefault();
+          setMenuState(false);
+
+          window.setTimeout(() => {
+            document.querySelector(url.hash)?.scrollIntoView({ block: 'start' });
+            window.history.pushState(null, '', url.hash);
+          }, 430);
         });
 
         document.addEventListener('keydown', (event) => {

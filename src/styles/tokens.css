@@ -81,3 +81,9 @@
   --font-body: "Inter", "Segoe UI", sans-serif;
   --font-display: var(--font-body);
 }
+
+@media (max-width: 720px) {
+  :root {
+    --anchor-offset: 3.25rem;
+  }
+}
