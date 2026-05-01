@@ -83,6 +83,10 @@ const imageUrl = new URL(image, Astro.site).href;
       if (menuToggle instanceof HTMLButtonElement && primaryNavigation instanceof HTMLElement) {
         const setMenuState = (isOpen: boolean) => {
           menuToggle.setAttribute('aria-expanded', String(isOpen));
+          menuToggle.setAttribute(
+            'aria-label',
+            isOpen ? 'Close navigation menu' : 'Open navigation menu',
+          );
           primaryNavigation.dataset.open = String(isOpen);
         };
 

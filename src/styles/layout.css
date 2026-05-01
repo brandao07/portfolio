@@ -171,6 +171,15 @@
     padding-top: 1.5rem;
   }
 
+  .topbar {
+    background: rgba(255, 247, 241, 0.68);
+    backdrop-filter: blur(18px) saturate(1.16);
+  }
+
+  .topbar:has(.nav-links[data-open="true"]) {
+    background: rgba(255, 247, 241, 0.52);
+  }
+
   .topbar-inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -193,12 +202,20 @@
     font: inherit;
     font-weight: 700;
     cursor: pointer;
-    transition: var(--transition-interactive);
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      border-color var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard);
   }
 
   .menu-toggle:hover,
   .menu-toggle:focus-visible {
     background: var(--surface-chip-hover);
+  }
+
+  .menu-toggle[aria-expanded="true"] {
+    border-color: var(--accent-outline-strong);
+    background: rgba(255, 255, 255, 0.34);
   }
 
   .menu-toggle-icon {
@@ -211,18 +228,55 @@
     height: 2px;
     border-radius: var(--radius-pill);
     background: currentColor;
+    transition:
+      opacity var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-toggle-icon span:first-child {
+    transform: translateY(0.38rem) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-toggle-icon span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-toggle-icon span:last-child {
+    transform: translateY(-0.38rem) rotate(-45deg);
   }
 
   .nav-links {
-    display: none;
+    display: grid;
     grid-column: 1 / -1;
+    gap: var(--space-xs);
     width: 100%;
-    padding-top: var(--space-xs);
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-0.35rem);
+    transition:
+      max-height var(--duration-slow) var(--ease-standard),
+      padding var(--duration-slow) var(--ease-standard),
+      opacity var(--duration-fast) var(--ease-standard),
+      transform var(--duration-slow) var(--ease-standard),
+      background-color var(--duration-slow) var(--ease-standard),
+      border-color var(--duration-slow) var(--ease-standard);
   }
 
   .nav-links[data-open="true"] {
-    display: grid;
-    gap: var(--space-xs);
+    max-height: 18rem;
+    padding: var(--space-xs);
+    border-color: var(--line-soft);
+    background: rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(18px) saturate(1.14);
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   .nav-links a {
